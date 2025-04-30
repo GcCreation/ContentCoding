@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --grid-size: min(20px, 5vw);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--secondary-color);
+}
+
+.game-container {
+    position: relative;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(10, var(--grid-size));
+    grid-template-rows: repeat(20, var(--grid-size));
+    gap: 1px;
+    border: 2px solid var(--secondary-color);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cell {
+    width: var(--grid-size);
+    height: var(--grid-size);
+    border-radius: 2px;
+}
+
+.empty {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.filled {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.I {
+    background-color: #00FFFF;
+}
+
+.J {
+    background-color: #0000FF;
+}
+
+.L {
+    background-color: #FF8000;
+}
+
+.O {
+    background-color: #FFFF00;
+}
+
+.S {
+    background-color: #00FF00;
+}
+
+.T {
+    background-color: #800080;
+}
+
+.Z {
+    background-color: #FF0000;
+}
+
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+}
+
+.game-over h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.next-piece-container {
+    text-align: center;
+}
+
+.next-piece-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.next-piece {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    grid-template-rows: repeat(4, 20px);
+    gap: 1px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.stats {
+    text-align: center;
+}
+
+.stats-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.stats-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    text-align: center;
+}
+
+.controls-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.control-list {
+    text-align: left;
+    list-style: none;
+}
+
+.control-list li {
+    margin-bottom: 5px;
+}
+
+.control-key {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .game-container {
+        padding: 5px;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-width: 320px;
+    }
+}

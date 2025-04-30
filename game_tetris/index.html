@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="title">TETRIS</h1>
+    <div class="container">
+        <div class="game-container">
+            <div class="game-board" id="board"></div>
+            <div class="game-over" id="gameOver">
+                <h2>Game Over</h2>
+                <button id="restartButton">Play Again</button>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="next-piece-container">
+                <h3 class="next-piece-title">Next Piece</h3>
+                <div class="next-piece" id="nextPiece"></div>
+            </div>
+            <div class="stats">
+                <h3 class="stats-title">Stats</h3>
+                <div class="stats-info">
+                    <div class="stat-item">
+                        <span>Score:</span>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Lines:</span>
+                        <span id="lines">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Level:</span>
+                        <span id="level">1</span>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <h3 class="controls-title">Controls</h3>
+                <ul class="control-list">
+                    <li><span class="control-key">←</span> Move Left</li>
+                    <li><span class="control-key">→</span> Move Right</li>
+                    <li><span class="control-key">↓</span> Move Down</li>
+                    <li><span class="control-key">↑</span> Rotate</li>
+                    <li><span class="control-key">Space</span> Hard Drop</li>
+                    <li><span class="control-key">P</span> Pause</li>
+                </ul>
+            </div>
+            <div class="button-row">
+                <button id="startButton">Start Game</button>
+                <button id="pauseButton">Pause</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
